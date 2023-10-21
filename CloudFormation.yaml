@@ -3,7 +3,7 @@ Metadata:
   Authors:
     Description:  David Henry (mr.d.henry@gmail.com)
   Purpose:
-    Description: "This stack is used to create a highly available, scalable and fault tolerant architect to host WordPress application. This is not designed to be a production ready installation.  It is bad practice to pass visible password parameters in the stack that can easily be exploited.  The primary goal of this project is to show case a cloudformation stack with a point and click, highly available, scalable and fault tollerant appliation. 
+    Description: "This template is used to create a highly available, scalable and fault tolerant architect to host WordPress application. This is not designed to be a production ready installation.  It is bad practice to pass visible password parameters in the stack that can easily be exploited.  The primary goal of this project is to show case a cloudformation stack with a point and click, highly available, scalable and fault tollerant appliation. 
     
         Tech Used:
     CloudFormation
