@@ -3,35 +3,9 @@ Metadata:
   Authors:
     Description:  David Henry (mr.d.henry@gmail.com)
   Purpose:
-    Description: "This stack is used to create a highly available, scalable and fault tolerant architect to host WordPress application.  This architecture include a VPC across three availability zones and three subnets per zone.  The publicly accessable subents are connected to the internet via an internet gateway. EFS FileSystem, with three Mount Targets to store the content of WordPress. A MySQL DBS Instance and a VPC Security Group associated with Mount targets.  In its
+    Description: "This stack is used to create a highly available, scalable and fault tolerant architect to host WordPress application. This is not designed to be a production ready installation.  It is bad practice to pass visible password parameters in the stack that can easily be exploited.  The primary goal of this project is to show case a cloudformation stack with a point and click, highly available, scalable and fault tollerant appliation. 
     
-    Scenario:
-    MyITCorp has been contracted to migrate a single server, on-prem instance of WordPress to AWS.  The client is attempting to reduce their on-prem IT footprint but has decided not to go serverless at the moment. The client is looking to keep costs low and not have to worry about managing their own infrastructre onsite.  They have provided us with a list of known IP ranges from vendors and partners that we cannot use.  
-    
-    Networks we cannot use:
-    Common use - 192.168.1.0/24 - 192.168.9.0/24
-    On-Premise (DC) - 192.168.20.0/24
-    AWS Pilot - 10.0.0.0/16
-    Azure Pilot - 172.31.0.0/16
-    Docker Bridge Network - 172.17.0.0/16
-    Due to a recent bid for CMS contracts we must avoid any potential conflicts.  We cannot confirm which networks are in use at CMS; however, we can confirm the default range is 10.127.0.0/9! 
-    
-    The client is requesting the application to be highly available, scalable and fault tolerant. A subnet is located in one availability zone. The number of availability zones will impact the applications high availability and resiliance.  We have decided to build the VPC across three availability zone's.  We also want a spare for growth and future needs of the company. 
-      Total = 4 availability zone's
-    
-    We are implementing a three tier archiecture for different types of infrastructure such as, Web, Application, Database, etc. plus a spare. 
-      Total = 4 subnets 
-    
-    We have decided that due to the size and growth potential for the company we need a /16 network.  This will need 16 subnets, each of which will be a /20.
-    
-    Exceptions:
-    Although we have provisioned for additional subnets and availability zones in the IP plan we will not allocated all of the resources in the this project.  We will only be creating the necessary physical infrastructure to complete the project.
-    
-    Minimal parameters have been used to make this project a point and click installation to remain within Amazon free tier vs a custom install that could break it out of free tier.  If you leave this project running or add data you may also run the chances of leaving free tier.  
-    
-    This is not designed to be a production ready installation.  It is bad practice to pass visible password parameters in the stack that can be eaily exploited.  The primary goal of this project is to show case a cloudformation stack with a point and click, highly available, scalable and fault tollerant appliation. 
-    
-    Tech Used:
+        Tech Used:
     CloudFormation
     EC2
     IAM
@@ -50,13 +24,39 @@ Metadata:
     EFS
     Launch Template - with User Data
     
-    Skills Building:
+        Skill Building:
     High Availability
     Scaling
     Fault Taulerance
     IP Planning
-    IaaC
-    "
+    IaaC 
+    
+    Scenario:
+    MyITCorp has been contracted to migrate a single server, on-prem instance of WordPress to AWS.  The client is attempting to reduce their on-prem IT footprint, and keep costs low.  They have provided us with a list of known IP ranges from vendors and partners that we cannot use.  
+    
+    Networks we cannot use:
+    Common use - 192.168.1.0/24 - 192.168.9.0/24
+    On-Premise (DC) - 192.168.20.0/24
+    AWS Pilot - 10.0.0.0/16
+    Azure Pilot - 172.31.0.0/16
+    Docker Bridge Network - 172.17.0.0/16
+    Due to a recent bid they must avoid any potential conflicts.  We cannot confirm which networks are in use; however, we can confirm the default range is 10.127.0.0/9! 
+    
+    The client is requesting the application to be highly available, scalable and fault tolerant. A subnet is located in one availability zone. The number of availability zones will impact the applications high availability and resiliance.  We have decided to build the VPC across three availability zone's.  We also want a spare for growth and future needs of the company. 
+      Total = 4 availability zone's
+    
+    We are implementing a three tier archiecture for different types of infrastructure such as, Web, Application, Database, etc. plus a spare. 
+      Total = 4 subnets 
+    
+    We have decided that due to the size and growth potential for the company we need a /16 network.  This will need 16 subnets, each of which will be a /20.
+    
+    Exceptions:
+    Although we have provisioned for additional subnets and availability zones in the IP plan we will not allocated all of the resources in the this project.  We will only be creating the necessary physical infrastructure to complete the project.
+    
+    Minimal parameters have been used to make this project a point and click installation to remain within Amazon free tier vs a custom install that could break it out of free tier.  If you leave this project running or add data you may also run the chances of leaving free tier.  
+    
+    
+        "
                                     
 Parameters:                                                                  
   LatestAMIID:                                                               
