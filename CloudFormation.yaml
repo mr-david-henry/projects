@@ -54,9 +54,7 @@ Metadata:
     Although we have provisioned for additional subnets and availability zones in the IP plan we will not allocated all of the resources in the this project.  We will only be creating the necessary physical infrastructure to complete the project.
     
     Minimal parameters have been used to make this project a point and click installation to remain within Amazon free tier vs a custom install that could break it out of free tier.  If you leave this project running or add data you may also run the chances of leaving free tier.  
-    
-    
-        "
+    "
                                     
 Parameters:                                                                  
   LatestAMIID:                                                               
